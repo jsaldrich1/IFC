@@ -11,6 +11,9 @@ dateSubmit.addEventListener('click', function() {
 	console.log("selectedMonthObject = " + selectedMonthObject);
 	console.log("selectedDayObject = " + selectedDayObject);
 
+	// Clears the highlighted day first to make room for the new day
+	clearHighlight();
+
 	// Grab January 1 of the year the user has selected in order to find difference in days (day of the year)
 	let anchorDate = new Date(selectedYearObject, 00, 01);
 	console.log("anchorDate: " + anchorDate);
@@ -20,24 +23,22 @@ dateSubmit.addEventListener('click', function() {
 	console.log("Day of the Year: " + dayOfTheYear);
 
 	// Update Header on Gregorian Calendar for selected month
-	document.getElementById("gregorian-current-month").innerHTML = setGregorianMonth(selectedMonthObject);
+	document.getElementById("gregorian-current-month").innerHTML = (setGregorianMonth(selectedMonthObject) + " " + selectedYearObject);
 	
 	// Update Header on Fixed Calendar for selected month
 	if (leapYear(selectedYearObject)) {
-		document.getElementById("fixed-current-month").innerHTML = setFixedMonthLeap(dayOfTheYear);
+		document.getElementById("fixed-current-month").innerHTML = (setFixedMonthLeap(dayOfTheYear) + " " + selectedYearObject);
 	} else {
-		document.getElementById("fixed-current-month").innerHTML = setFixedMonth(dayOfTheYear);
+		document.getElementById("fixed-current-month").innerHTML = (setFixedMonth(dayOfTheYear) + " " + selectedYearObject);
 	}
 
 	// Update Leap Year indicator
-	document.getElementById("leapYear").innerHTML = "Leap Year: " + leapYear(selectedYearObject);
+	// document.getElementById("leapYear").innerHTML = "Leap Year: " + leapYear(selectedYearObject);
 	
 	// Update Day of the Year indicator
-	document.getElementById("dayOfYear").innerHTML = "Day of the Year: " + _dayOfTheYear(anchorDate, dateObject);
+	// document.getElementById("dayOfYear").innerHTML = "Day of the Year: " + _dayOfTheYear(anchorDate, dateObject);
 
 	// Update which days are highlighted on both calendars
-	clearHighlight();
-
 	if (leapYear(selectedYearObject)) {
 		highlightFixedCalendar(_dayOfFixedMonthSwitchLeap(dayOfTheYear));
 	} else {
@@ -46,17 +47,6 @@ dateSubmit.addEventListener('click', function() {
 
 	// HighlightGregorianCalendar(_dayOfGregorianMonthSwitch());
 	// Can likely use getDay functions for easier solution
-
-})
-
-testAction.addEventListener("click", function() {
-	// highlight all squares in Fixed calendar
-	// for (i = 1; i < 29; i++) {
-	// 	let listItem = document.getElementById("fixed-" + i);
-	// 	listItem.classList.add("day-highlighter");
-	// }
-
-	_dayOfFixedMonthSwitch(dayOfTheYear);
 })
 
 // Determine if selected year is a leap year
@@ -155,16 +145,34 @@ function setFixedMonthLeap(day) {
 	}
 }
 
+function _addFixedDay29() {
+	document.getElementById("fixed-29").innerHTML = "🌟 🌟 " + 29 + " 🌟 🌟";
+	document.getElementById("fixed-29").classList.add("day-highlighter");
+}
+
+function _removeFixedDay29() {
+	document.getElementById("fixed-29").innerHTML = "";
+	document.getElementById("fixed-29").classList.remove("day-highlighter");
+}
+
 // Clears all highlights on calendars
 function clearHighlight() {
 	clearFixedHighlight();
-	// clearGregorianHighlight();
+	_removeFixedDay29();
+	clearGregorianHighlight();
 }
 
 // Clears the highlighted day in the Fixed Calendar
 function clearFixedHighlight() {
 	for (i = 1; i <= 28; i++) {
 		let listItem = document.getElementById("fixed-" + i);
+		listItem.classList.remove("day-highlighter");
+	}
+}
+
+function clearGregorianHighlight() {
+	for (i = 1; i <= 35; i++) {
+		let listItem = document.getElementById("greg-" + i);
 		listItem.classList.remove("day-highlighter");
 	}
 }
@@ -263,6 +271,7 @@ function _dayOfFixedMonthSwitch(day) {
 			return 28;
 		case 365:
 			console.log("Huzzah! It's Year Day!")
+			_addFixedDay29();
 			return 29;
 	}
 }
@@ -356,9 +365,11 @@ function _dayOfFixedMonthSwitchLeap(day) {
 			return 28;
 		case 197:
 			console.log("Huzzah! It's Leap Day!");
+			_addFixedDay29();
 			return 29;
 		case 366:
 			console.log("Huzzah! It's Year Day!");
+			_addFixedDay29();
 			return 29;
 	}
 }

@@ -5,9 +5,10 @@
     --backgroundColor: #F1F1F1;
     --mainColor: #21A0A0;
     /* --callOutColor: #046865; */
-    --callOutColor: #6813ff;
+    --callOutColor: #6820e4;
     --white: #FFFFFF;
     --text: #707070;
+    --darkText: #161616;
 }
 
 body {
@@ -39,6 +40,28 @@ h1 {
     padding: 2em;
     text-align: center;
     min-height: 275px;
+}
+
+#datebtn {
+    font-size: 1em;
+    color: var(--white);
+    background-color: var(--callOutColor);
+    padding: 1em 2em 1em 2em;
+    margin: 2em;
+    border-radius: .5em;
+    border: none;
+    box-shadow: 0px 8px rgba(20, 20, 20, 0.4);
+    cursor: pointer;
+}
+
+#datebtn:hover {
+    background-color: #8642fc;
+}
+
+#datebtn:active {
+    background-color: #5416c0;
+    box-shadow: 0 4px rgba(20, 20, 20, 0.4);
+    transform: translateY(4px);
 }
 
 .app-container {
@@ -94,4 +117,9 @@ li {
 .social-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+#fixed-29 {
+    color: var(--darkText);
+    font-weight: bold;
 }
