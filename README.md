@@ -1,2 +1,3 @@
-# IFC
-International Fixed Calendar Converter
+# International Fixed Calendar Converter
+
+https://jsaldrich1.github.io/IFC/
