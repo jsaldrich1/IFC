@@ -31,11 +31,21 @@ h1 {
     padding: 1em;
 }
 
+#datePicker {
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    border-radius: 10px;
+    padding: .25em;
+    cursor: pointer;
+}
+
 .card {
     background-color: var(--white);
     box-shadow: 2px 2px 4px rgba(20, 20, 20, 0.2);
     border-radius: 10px;
     padding: 2em;
+    padding-top: 1em;
     text-align: center;
     min-height: 275px;
 }
@@ -130,5 +140,18 @@ li {
 
     .exposition-container {
         grid-template-columns: 1fr;
+    }
+
+    body {
+        font-size: 2em;
+    }
+
+    h1, h2 {
+        padding: 0;
+    }
+
+    .pick-a-date {
+        padding: 0;
+        margin: 0;
     }
 }
