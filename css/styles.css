@@ -1,10 +1,8 @@
 :root {
     --errorColor: #E53D00;
     --highlightColor: #FFE900;
-    /* --backgroundColor: #FCFFF7; */
     --backgroundColor: #F1F1F1;
     --mainColor: #21A0A0;
-    /* --callOutColor: #046865; */
     --callOutColor: #6820e4;
     --white: #FFFFFF;
     --text: #707070;
@@ -77,6 +75,7 @@ h1 {
     grid-template-columns: repeat(7, 1fr);
 }
 
+
 .fixed-calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -122,4 +121,14 @@ li {
 #fixed-29 {
     color: var(--darkText);
     font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+
+    .exposition-container {
+        grid-template-columns: 1fr;
+    }
 }
