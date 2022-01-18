@@ -17,7 +17,7 @@ dateSubmit.addEventListener('click', function() {
 	let dayOfTheYear = _dayOfTheYear(anchorDate, dateObject);
 
 	// Update Header on Gregorian Calendar for selected month
-	document.getElementById("gregorian-current-month").innerHTML = (setGregorianMonth(selectedMonthObject) + " " + selectedYearObject);
+	// document.getElementById("gregorian-current-month").innerHTML = (setGregorianMonth(selectedMonthObject) + " " + selectedYearObject);
 	
 	// Update Header on Fixed Calendar for selected month
 	if (leapYear(selectedYearObject)) {
@@ -33,8 +33,8 @@ dateSubmit.addEventListener('click', function() {
 		highlightFixedCalendar(_dayOfFixedMonthSwitch(dayOfTheYear));
 	}
 
-	_drawGregorianCalendar(_firstDayOfGregorianMonth(selectedYearObject, selectedMonthObject), _daysInMonth(selectedYearObject, selectedMonthObject));
-	_highlightGregorianCalendar(selectedDayObject, _firstDayOfGregorianMonth(selectedYearObject, selectedMonthObject));
+	// _drawGregorianCalendar(_firstDayOfGregorianMonth(selectedYearObject, selectedMonthObject), _daysInMonth(selectedYearObject, selectedMonthObject));
+	// _highlightGregorianCalendar(selectedDayObject, _firstDayOfGregorianMonth(selectedYearObject, selectedMonthObject));
 })
 
 // Determine if selected year is a leap year
@@ -65,7 +65,7 @@ function _firstDayOfGregorianMonth(year, month) {
 
 // Populate Gregorian Calendar Days starting with first day of month
 function _drawGregorianCalendar(firstDay, daysInMonth) {
-	_clearGregorianDays();
+	// _clearGregorianDays();
 	let num = 1;
 	for (i = firstDay; num <= daysInMonth; i++) {
 		document.getElementById("greg-" + i).innerHTML = num;
@@ -188,7 +188,7 @@ function _removeFixedDay29() {
 function clearHighlight() {
 	clearFixedHighlight();
 	_removeFixedDay29();
-	clearGregorianHighlight();
+	// clearGregorianHighlight();
 }
 
 // Clears the highlighted day in the Fixed Calendar

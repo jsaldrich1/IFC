@@ -13,33 +13,36 @@
 </script>
 
   <!-- generics -->
-  <link rel="icon" href="/favicon-32.png" sizes="32x32">
-  <link rel="icon" href="/favicon-128.png" sizes="128x128">
-  <link rel="icon" href="/favicon-152.png" sizes="152x1526">
-  <link rel="icon" href="/favicon-167.png" sizes="167x167">
-  <link rel="icon" href="/favicon-180.png" sizes="180x180">
-  <link rel="icon" href="/favicon-192.png" sizes="192x192">
-  <link rel="icon" href="/favicon-196.png" sizes="196x196">
+  <link rel="icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-128.png" sizes="128x128">
+  <link rel="icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-152.png" sizes="152x1526">
+  <link rel="icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-167.png" sizes="167x167">
+  <link rel="icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-180.png" sizes="180x180">
+  <link rel="icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-192.png" sizes="192x192">
+  <link rel="icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-196.png" sizes="196x196">
 
   <!-- Android -->
-  <link rel="shortcut icon" sizes="196x196" href="/favicon-196.png">
+  <link rel="shortcut icon" sizes="196x196" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-196.png">
 
   <!-- iOS -->
-  <link rel="apple-touch-icon" href="/favicon-128.png" sizes="128x128">
-  <link rel="apple-touch-icon" href="/favicon-152.png" sizes="152x152">
-  <link rel="apple-touch-icon" href="/favicon-180.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-128.png" sizes="128x128">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-180.png" sizes="180x180">
 
   <!-- Windows 8 IE 10-->
   <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="/favicon-152.png">
+  <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/jsaldrich1/IFC/master/favicon-152.png">
 
   <meta charset="utf-8">
 
-  <title>International Fixed Calendar Calculator</title>
+  <title>International Fixed Calendar</title>
   <meta name="description" content="This webpage provides a calculator to translate any Gregorian date into the corresponding Fixed date.">
   <meta name="author" content="Jeremy-Aldrich.com">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -47,114 +50,54 @@
 </head>
 
 <body>
-  <header>
-    <h1>International Fixed Calendar Calculator</h1>
-</header>
-
   <section class="app-container">
     <article class="pick-a-date card">
-      <h2>Pick a Date</h2>
-      <input type="date" id="datePicker" value="2021-01-01"/>
-    </br>
+      <header>
+        <h1>International Fixed Calendar</h1>
+      </header>
+      <h2 id="cta-text">Go ahead. Pick a date to fix.</h2>
+      <input type="date" id="datePicker" value="2020-01-01"/>
       <input type="button" value="Fix Date" id="datebtn"/>
     </article>
 
-    <arcitle class="gregorian card">
-      <h2>Gregorian</h2>
-      <p id="gregorian-current-month">January 2020</p>
-      <div class="gregorian-calendar">
-        <li id="gregarian-Sunday">Su</li>
-        <li id="gregarian-Monday">Mo</li>
-        <li id="gregarian-Tuesday">Tu</li>
-        <li id="gregarian-Wednesday">We</li>
-        <li id="gregarian-Thursday">Th</li>
-        <li id="gregarian-Friday">Fr</li>
-        <li id="gregarian-Saturday">Sa</li>
-        <li id="greg-1"></li>
-        <li id="greg-2"></li>
-        <li id="greg-3"></li>
-        <li id="greg-4" class="day-highlighter">1</li>
-        <li id="greg-5">2</li>
-        <li id="greg-6">3</li>
-        <li id="greg-7">4</li>
-        <li id="greg-8">5</li>
-        <li id="greg-9">6</li>
-        <li id="greg-10">7</li>
-        <li id="greg-11">8</li>
-        <li id="greg-12">9</li>
-        <li id="greg-13">10</li>
-        <li id="greg-14">11</li>
-        <li id="greg-15">12</li>
-        <li id="greg-16">13</li>
-        <li id="greg-17">14</li>
-        <li id="greg-18">15</li>
-        <li id="greg-19">16</li>
-        <li id="greg-20">17</li>
-        <li id="greg-21">18</li>
-        <li id="greg-22">19</li>
-        <li id="greg-23">20</li>
-        <li id="greg-24">21</li>
-        <li id="greg-25">22</li>
-        <li id="greg-26">23</li>
-        <li id="greg-27">24</li>
-        <li id="greg-28">25</li>
-        <li id="greg-29">26</li>
-        <li id="greg-30">27</li>
-        <li id="greg-31">28</li>
-        <li id="greg-32">29</li>
-        <li id="greg-33">30</li>
-        <li id="greg-34">31</li>
-        <li id="greg-35"></li>
-        <li id="greg-36"></li>
-        <li id="greg-37"></li>
-        <li id="greg-36"></li>
-        <li id="greg-37"></li>
-        <li id="greg-36"></li>
-        <li id="greg-37"></li>
-        <li id="greg-38"></li>
-      </div>
-      <div class="day-highlighter"></div>
-    </arcitle>
-
     <article class="fixed card">
-      <h2>Fixed</h2>
       <p id="fixed-current-month">January 2020</p>
       <div class="fixed-calendar">
-        <li id="fixed-Sunday">Su</li>
-        <li id="fixed-Monday">Mo</li>
-        <li id="fixed-Tuesday">Tu</li>
-        <li id="fixed-Wednesday">We</li>
-        <li id="fixed-Thursday">Th</li>
-        <li id="fixed-Friday">Fr</li>
-        <li id="fixed-Saturday">Sa</li>
-        <li id="fixed-1"class="day-highlighter">1</li>
-        <li id="fixed-2">2</li>
-        <li id="fixed-3">3</li>
-        <li id="fixed-4">4</li>
-        <li id="fixed-5">5</li>
-        <li id="fixed-6">6</li>
-        <li id="fixed-7">7</li>
-        <li id="fixed-8">8</li>
-        <li id="fixed-9">9</li>
-        <li id="fixed-10">10</li>
-        <li id="fixed-11">11</li>
-        <li id="fixed-12">12</li>
-        <li id="fixed-13">13</li>
-        <li id="fixed-14">14</li>
-        <li id="fixed-15">15</li>
-        <li id="fixed-16">16</li>
-        <li id="fixed-17">17</li>
-        <li id="fixed-18">18</li>
-        <li id="fixed-19">19</li>
-        <li id="fixed-20">20</li>
-        <li id="fixed-21">21</li>
-        <li id="fixed-22">22</li>
-        <li id="fixed-23">23</li>
-        <li id="fixed-24">24</li>
-        <li id="fixed-25">25</li>
-        <li id="fixed-26">26</li>
-        <li id="fixed-27">27</li>
-        <li id="fixed-28">28</li>
+        <li id="fixed-Sunday"class="cal-item">S</li>
+        <li id="fixed-Monday"class="cal-item">M</li>
+        <li id="fixed-Tuesday"class="cal-item">T</li>
+        <li id="fixed-Wednesday"class="cal-item">W</li>
+        <li id="fixed-Thursday"class="cal-item">T</li>
+        <li id="fixed-Friday"class="cal-item">F</li>
+        <li id="fixed-Saturday"class="cal-item">S</li>
+        <li id="fixed-1"class="cal-item day-highlighter">1</li>
+        <li id="fixed-2"class="cal-item">2</li>
+        <li id="fixed-3"class="cal-item">3</li>
+        <li id="fixed-4"class="cal-item">4</li>
+        <li id="fixed-5"class="cal-item">5</li>
+        <li id="fixed-6"class="cal-item">6</li>
+        <li id="fixed-7"class="cal-item">7</li>
+        <li id="fixed-8"class="cal-item">8</li>
+        <li id="fixed-9"class="cal-item">9</li>
+        <li id="fixed-10"class="cal-item">10</li>
+        <li id="fixed-11"class="cal-item">11</li>
+        <li id="fixed-12"class="cal-item">12</li>
+        <li id="fixed-13"class="cal-item">13</li>
+        <li id="fixed-14"class="cal-item">14</li>
+        <li id="fixed-15"class="cal-item">15</li>
+        <li id="fixed-16"class="cal-item">16</li>
+        <li id="fixed-17"class="cal-item">17</li>
+        <li id="fixed-18"class="cal-item">18</li>
+        <li id="fixed-19"class="cal-item">19</li>
+        <li id="fixed-20"class="cal-item">20</li>
+        <li id="fixed-21"class="cal-item">21</li>
+        <li id="fixed-22"class="cal-item">22</li>
+        <li id="fixed-23"class="cal-item">23</li>
+        <li id="fixed-24"class="cal-item">24</li>
+        <li id="fixed-25"class="cal-item">25</li>
+        <li id="fixed-26"class="cal-item">26</li>
+        <li id="fixed-27"class="cal-item">27</li>
+        <li id="fixed-28"class="cal-item">28</li>
       </div>
     </br>
       <li id="fixed-29"></li>
@@ -165,11 +108,15 @@
   <section class="exposition-container">
     <article class="what-is-the-ifc card">
       <h2>What is the International Fixed Calendar?</h2>
-      <p class="exposition">The Fixed Calendar is a replacement system for time keeping where every month contains exactly 28 days. Every month has precisely four weeks beginning on Sunday, the 1st and ends on Saturday the 28th. That means every month’s days are the same number, so every single 17th a Tuesday for example. The first Friday of the month is always the 6th. This calendar makes planning and scheduling a breeze since month to month, year to year, dates are consistent, predictable, and easy to remember and calculate.</p>
-      <p class="exposition">You may have already done the math, but 28 days in each month only adds up to 336 days total. To remedy this, a new, 13th month is added between June and July, called Sol to represent the summer (sorry lower hemisphere). With Sol’s 28 days the total comes to 364. With only one single day as an outlier, the Fixed Calendar simply calls for a special, celebration day to occur once a year. So every year, after Saturday, December 28th but before Sunday, January 1st, the world celebrates Year Day! This day falls on December 29th but has no day of the week. Everyone simply gets an extra day between their Saturday and Sunday.</p>
-      <p class="exposition">Similar to the Gregorian Calendar, every four years is a Leap Year, containing Leap Day - a similar celebratory day as Year Day - on Sol 29th. Just like Year Day, Leap Day has no day of the week (so everyone gets a 3-day weekend).</p>
-      <p class="exposition">Go ahead and find your Fixed Birthday, Anniversary, or what today should be if it were fixed. If this all sounds a bit crazy, don’t take just my word for it. You can read more about the <a href="https://en.wikipedia.org/wiki/International_Fixed_Calendar" target="_blank">International Fixed Calendar</a> and even how the <a href="https://gizmodo.com/how-the-quest-for-a-perfectly-rational-calendar-created-1697616634" target="_blank">Eastman Kodak Company</a> used this system for almost 60 years!
+      <p class="exposition">The Fixed Calendar is an alternative system for time keeping where every month contains exactly 28 days. The idea is consistency. Every month has four weeks beginning on Sunday, the 1st, and ends on Saturday the 28th. That means every month’s days are the same number, so every single 17th a Tuesday for example. The first Friday of the month is always the 6th. This calendar makes planning and scheduling a breeze since month to month, year to year, dates are consistent, predictable, and easy to remember and calculate.</p>
+      <p class="exposition">You may have already done the math, but 28 days in each month only adds up to 336 days total. To remedy this, a new, 13th month is added between June and July, called Sol to represent the summer (sorry southern hemisphere). With Sol’s 28 days the total comes to 364. With only one single day as an outlier, the Fixed Calendar simply calls for a special, celebration day to occur once a year. So every year, after Saturday, December 28th but before Sunday, January 1st, the world celebrates Year Day! This day falls on December 29th but has no day of the week. Everyone simply gets an extra day between their Saturday and Sunday.</p>
+      <p class="exposition">Similar to the Gregorian Calendar, every four years there is a Leap Year, containing Leap Day - a similar celebratory day as Year Day. Leap Day occurs on Sol 29thm, and just like Year Day, it has no day of the week.</p>
+      <p class="exposition">Go ahead and find your Fixed Birthday, Anniversary, or what today should be if it were fixed. If this all sounds a bit crazy, don’t take my word for it. You can read more about the <a href="https://en.wikipedia.org/wiki/International_Fixed_Calendar" target="_blank">International Fixed Calendar</a> and even how the <a href="https://gizmodo.com/how-the-quest-for-a-perfectly-rational-calendar-created-1697616634" target="_blank">Eastman Kodak Company</a> used this system for almost 60 years!
       </p>
+      <br>
+      <br>
+      <br>
+      <p class="exposition">This silly calendar was haphazardly strung together by <a href="https://jeremy-aldrich.com/" target="blank">Jeremy Aldrich</a>.</p>
     </article>
   </section>
   <script src="js/scripts.js"></script>
